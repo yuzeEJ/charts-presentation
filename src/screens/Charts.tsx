@@ -1,3 +1,30 @@
+/*
+  This is an explanation and hands on comparison between Recharts, Echarts and Nivo
+
+  * Nivo charts is simple and is easy to use and highly customizable (It doesn't have the candle stick 
+  chart but has the boxplot one which is a bit similar to the candle stick)
+
+  * Recharts is very basic and doesn't have much ui so it has to be wrapped around ex:shadcn wrapper (it doesn't have
+  a candlestick chart or a boxplot)
+
+  * Echarts is pretty simple you just have to set the options and the documentation is thorough, it has 
+    smooth animations and highly customizable (it has both boxplot and candlestick with smooth animations)
+    it also can have technical indicators on the plot ex:Moving Average, RSI, MACD..
+
+  * chart.JS didn't look into it much but it provides a variety of charts but lacks the candle stick chart unless you
+    use a wrapper for it https://www.sgratzl.com/chartjs-chart-boxplot/examples/
+  
+    ** Summary **
+  - In my opinion we should look into Echarts since it handles charts very well and has a variety of large collection
+  of charts and is pretty easy to use with its documentation and stylings
+  
+  [external links]:
+  * Nivo @ https://nivo.rocks/components/
+  * Recharts @ https://recharts.org/en-US/examples
+  * Echarts @ https://echarts.apache.org/examples/en/index.html
+  * Chart.JS @ https://www.chartjs.org/docs/latest/samples/area/line-stacked.html
+  * Charts.JS(CandleWrapper) @ https://www.sgratzl.com/chartjs-chart-boxplot/examples/
+*/
 import React from "react";
 import AreaEchartsCharts from "../components/echarts/AreaEchartsCharts";
 import BarEchartsCharts from "../components/echarts/BarEchartsCharts";
