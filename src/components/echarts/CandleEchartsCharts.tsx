@@ -22,8 +22,16 @@ const CandleEchartsCharts = () => {
       trigger: "axis",
       axisPointer: {
         type: "cross",
-        crossStyle: { color: '#fff' }
+        crossStyle: { color: '#fff' },
+        label:{
+          show:true,
+          color:'#000',
+          formatter: null,
+  precision: 'auto',
+  margin: 3,
+        }
       },
+     
     },
     xAxis: {
       type: "category",
