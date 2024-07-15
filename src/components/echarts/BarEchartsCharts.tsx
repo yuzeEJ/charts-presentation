@@ -1,16 +1,16 @@
 import ReactECharts from 'echarts-for-react';
 
-const BarEchartsCharts = () => {
-    const data = {
-        categories: ['Apples', 'Bananas', 'Grapes', 'Oranges'],
-        values: [25, 40, 30, 35],
-        colors: ['#ff4d4d', '#ffb84d', '#4d79ff', '#4dff4d']
+const BarEchartsCharts = (props:{data:{
 
-      };
+  categories: string[];
+  values: number[];
+  colors:string[];
+}
+}) => {
       const option = {
         tooltip: {},
         xAxis: {
-          data: data.categories,
+          data: props.data.categories,
           axisLine: { lineStyle: { color: '#fff' } },
           axisLabel: { color: '#fff' }
         },
@@ -22,9 +22,9 @@ const BarEchartsCharts = () => {
         series: [{
           name: 'Quantity',
           type: 'bar',
-          data: data.values.map((value, index) => ({
+          data: props.data.values.map((value, index) => ({
             value,
-            itemStyle: { color: data.colors[index], borderWidth:0 }
+            itemStyle: { color: props.data.colors[index], borderWidth:0 }
           })),
 
         }],

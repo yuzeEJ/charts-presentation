@@ -1,10 +1,10 @@
 import ReactECharts from 'echarts-for-react';
 
-const AreaEchartsCharts = () => {
-    const data = {
-      categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      values: [120, 132, 101, 134, 90, 230, 210]
-      };
+const AreaEchartsCharts = (props:{data:{
+  categories:string[];
+  values:number[];
+}}) => {
+
       const option = {
         tooltip: {
           trigger: 'axis',
@@ -16,7 +16,7 @@ const AreaEchartsCharts = () => {
         xAxis: {
           type: 'category',
           boundaryGap: false,
-          data: data.categories,
+          data: props.data.categories,
           axisLine: { lineStyle: { color: '#fff' } },
           axisLabel: { color: '#fff' }
         },
@@ -30,7 +30,7 @@ const AreaEchartsCharts = () => {
           type: 'line',
           stack: 'Total',
           smooth:'true',
-          data: data.values,
+          data: props.data.values,
           areaStyle: {
             color: {
               type: 'linear',

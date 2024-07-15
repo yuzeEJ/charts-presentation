@@ -38,7 +38,7 @@ import AreaRechartsCharts from "../components/rechartsCharts/AreaRechartsCharts"
 import BarRechartsCharts from "../components/rechartsCharts/BarRechartsCharts";
 import PieRechartsCharts from "../components/rechartsCharts/PieRecartsCharts";
 const Charts = () => {
-  const pieData = [
+  const pieNivoData = [
     {
       id: "java",
       label: "java",
@@ -70,7 +70,7 @@ const Charts = () => {
       color: "hsl(104, 70%, 50%)",
     },
   ];
-  const barData = [
+  const barNivoData = [
     {
       day: "Monday",
       degress: 59,
@@ -100,7 +100,7 @@ const Charts = () => {
       degress: 67,
     },
   ];
-  const candleStickeData = [
+  const candleStickeNivoData = [
     {
       group: "Alpha",
       subgroup: "A",
@@ -346,7 +346,7 @@ const Charts = () => {
     },
   ];
 
-  const streamData = [
+  const streamNivoData = [
     {
       Raoul: 116,
       Josiane: 79,
@@ -420,7 +420,34 @@ const Charts = () => {
       Jacques: 80,
     },
   ];
-  const [activeTab, setActiveTab] = React.useState("nivo"); // Default active tab
+
+  // Echarts data
+  const candleStickEData: [string, number, number, number, number][] = [
+    ["2024-07-01", 2320.26, 2320.26, 2287.3, 2362.94],
+    ["2024-07-02", 2300, 2291.3, 2288.26, 2308.38],
+    ["2024-07-03", 2295.35, 2346.5, 2295.35, 2346.92],
+    ["2024-07-04", 2347.22, 2358.98, 2337.35, 2363.8],
+    ["2024-07-05", 2360.75, 2382.48, 2347.89, 2383.76],
+    
+  ];
+  const areaEData = {
+    categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    values: [120, 132, 101, 134, 90, 230, 210]
+    };
+    const barEData={
+      categories: ['Apples', 'Bananas', 'Grapes', 'Oranges'],
+      values: [25, 40, 30, 35],
+      colors: ['#ff4d4d', '#ffb84d', '#4d79ff', '#4dff4d']
+
+    };
+    const pieEdata= [
+      { value: 1048, name: "Search Engines" },
+      { value: 735, name: "Direct" },
+      { value: 580, name: "Email" },
+      { value: 484, name: "Union Ads" },
+      { value: 300, name: "Video Ads" },
+    ];
+  const [activeTab, setActiveTab] = React.useState("echarts"); // Default active tab
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
@@ -433,14 +460,13 @@ const Charts = () => {
         <button style={{backgroundColor:'transparent',borderColor:'#333388'}} onClick={() => handleTabChange("recharts")}>Recharts</button>
         <button style={{backgroundColor:'transparent',borderColor:'#338833'}} onClick={() => handleTabChange("echarts")}>Echarts</button>
       </div>
-
       {activeTab === "nivo" && (
         <>
           <h2>Nivo Charts Examples</h2>
-          <BarNivoCharts data={barData} />
-          <PieNivoCharts data={pieData} />
-          <CandleStickNivoCharts data={candleStickeData} />
-          <StreamNivoCharts data={streamData} />
+          <BarNivoCharts data={barNivoData} />
+          <PieNivoCharts data={pieNivoData} />
+          <CandleStickNivoCharts data={candleStickeNivoData} />
+          <StreamNivoCharts data={streamNivoData} />
         </>
       )}
       {activeTab === "recharts" && (
@@ -454,10 +480,10 @@ const Charts = () => {
       {activeTab === "echarts" && (
         <>
           <h2>Echarts Charts Examples</h2>
-          <BarEchartsCharts />
-          <AreaEchartsCharts />
-          <PieEchartsCharts />
-          <CandleEchartsCharts />
+          <BarEchartsCharts data={barEData}/>
+          <AreaEchartsCharts data={areaEData}/>
+          <PieEchartsCharts data={pieEdata}/>
+          <CandleEchartsCharts data={candleStickEData}/>
         </>
       )}
     </>

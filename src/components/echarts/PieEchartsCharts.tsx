@@ -1,13 +1,12 @@
 import ReactECharts from "echarts-for-react";
 
-const PieEchartsCharts = () => {
-  const data = [
-    { value: 1048, name: "Search Engines" },
-    { value: 735, name: "Direct" },
-    { value: 580, name: "Email" },
-    { value: 484, name: "Union Ads" },
-    { value: 300, name: "Video Ads" },
-  ];
+const PieEchartsCharts = (props:{
+  data:{
+    value:number;
+    name:string;
+  }[]
+}) => {
+  
   const option = {
     tooltip: {
       trigger: "item",
@@ -25,7 +24,7 @@ const PieEchartsCharts = () => {
         name: "Traffic Sources",
         type: "pie",
         radius: "50%",
-        data: data,
+        data: props.data,
         emphasis: {
           itemStyle: {
             shadowBlur: 10,
