@@ -1,5 +1,28 @@
 import ReactECharts from 'echarts-for-react';
 
+/*
+@component
+  Displays an area chart using ECharts. This component is designed to visualize data with smooth lines
+    and a shaded area beneath the line. 
+  It includes tooltips for interactive data points,
+    a dark background for better visibility, and customizable colors for the area and line.
+
+@props
+  data: Object containing two properties:
+    - categories: Array of strings representing the categories or labels for the x-axis (e.g., dates, time periods).
+    - values: Array of numbers representing the values for each category. The order of values corresponds to the order of categories.
+
+  Note: The `categories` and `values` arrays should have the same length, with each value corresponding to a category.
+
+@usage
+  <AreaEchartsCharts 
+    data={{
+      categories: ["Jan", "Feb", "Mar", "Apr", "May"],
+      values: [120, 132, 101, 134, 90]
+    }} 
+  />
+*/
+
 const AreaEchartsCharts = (props:{data:{
   categories:string[];
   values:number[];

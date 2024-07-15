@@ -1,5 +1,31 @@
 import ReactECharts from "echarts-for-react";
 import "echarts/theme/dark";
+/*
+@component
+  Displays a candlestick chart using ECharts with a dark theme. 
+  This component is designed to visualize financial data or other time-series data where each entry represents 
+  a trading day's open, high, low, and close values. The chart includes tooltips for detailed information 
+  and customizable axis and series styles for better readability.
+
+@props
+  data: Array of tuples where each tuple represents a data point in the chart. Each tuple should have:
+    - string: Date or time period (e.g., "2024-01-01")
+    - number: Opening value
+    - number: Closing value
+    - number: Highest value
+    - number: Lowest value
+  Note: The order of the values in each tuple is: [Date, Open, Close, Highest, Lowest]
+
+@usage
+  <CandleEchartsCharts 
+      data={[
+      ["2024-01-01", 100, 110, 120, 90],
+      ["2024-01-02", 110, 120, 130, 100],
+      ["2024-01-03", 120, 130, 140, 110],
+      ["2024-01-04", 130, 140, 150, 120]
+    ]} 
+  />
+*/
 
 const CandleEchartsCharts = (props: {
   data: [string, number, number, number, number][];

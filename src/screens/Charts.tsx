@@ -422,31 +422,162 @@ const Charts = () => {
   ];
 
   // Echarts data
+  // these candles' data represnets the open, close, highest and lowest stock prices in a period of time
   const candleStickEData: [string, number, number, number, number][] = [
     ["2024-07-01", 2320.26, 2320.26, 2287.3, 2362.94],
-    ["2024-07-02", 2300, 2291.3, 2288.26, 2308.38],
+    ["2024-07-02", 2300.0, 2291.3, 2288.26, 2308.38],
     ["2024-07-03", 2295.35, 2346.5, 2295.35, 2346.92],
     ["2024-07-04", 2347.22, 2358.98, 2337.35, 2363.8],
     ["2024-07-05", 2360.75, 2382.48, 2347.89, 2383.76],
-    
+    ["2024-07-06", 2380.95, 2378.3, 2367.96, 2394.22],
+    ["2024-07-07", 2377.41, 2419.02, 2369.57, 2421.15],
+    ["2024-07-08", 2418.76, 2436.65, 2417.58, 2440.01],
+    ["2024-07-09", 2434.89, 2420.26, 2413.12, 2443.5],
+    ["2024-07-10", 2419.75, 2399.97, 2391.13, 2423.56],
+    ["2024-07-11", 2400.56, 2409.16, 2385.45, 2413.89],
+    ["2024-07-12", 2408.72, 2425.98, 2403.89, 2431.21],
+    ["2024-07-13", 2425.95, 2449.45, 2419.32, 2452.99],
+    ["2024-07-14", 2448.21, 2465.89, 2442.76, 2473.11],
+    ["2024-07-15", 2463.32, 2487.01, 2460.53, 2492.65],
+    ["2024-07-16", 2485.12, 2500.23, 2479.21, 2504.87],
+    ["2024-07-17", 2502.34, 2512.89, 2498.76, 2515.23],
+    ["2024-07-18", 2510.12, 2530.11, 2507.45, 2534.56],
+    ["2024-07-19", 2528.78, 2540.45, 2523.65, 2545.12],
+    ["2024-07-20", 2538.34, 2556.78, 2532.45, 2560.23],
+    ["2024-07-21", 2555.34, 2572.45, 2548.23, 2576.12],
+    ["2024-07-22", 2570.89, 2589.32, 2565.45, 2592.21],
+    ["2024-07-23", 2588.76, 2605.45, 2583.34, 2608.65],
+    ["2024-07-24", 2603.12, 2615.89, 2599.76, 2619.45],
+    ["2024-07-25", 2614.45, 2630.32, 2610.23, 2635.78],
+    ["2024-07-26", 2629.89, 2645.45, 2624.23, 2648.65],
+    ["2024-07-27", 2642.12, 2658.76, 2638.45, 2662.34],
+    ["2024-07-28", 2657.78, 2670.45, 2652.34, 2675.23],
+    ["2024-07-29", 2669.45, 2685.32, 2664.23, 2689.12],
+    ["2024-07-30", 2684.89, 2698.45, 2679.34, 2702.78],
+    ["2024-07-31", 2697.12, 2710.89, 2692.34, 2714.45],
+    ["2024-08-01", 2709.78, 2725.34, 2705.12, 2729.89],
+    ["2024-08-02", 2723.45, 2738.76, 2718.23, 2742.65],
+    ["2024-08-03", 2736.12, 2750.45, 2731.34, 2754.89],
+    ["2024-08-04", 2748.78, 2765.32, 2743.45, 2769.21],
+    ["2024-08-05", 2759.45, 2781.67, 2752.34, 2786.12],
+    ["2024-08-06", 2783.21, 2795.45, 2776.12, 2800.34],
+    ["2024-08-07", 2792.34, 2809.78, 2785.67, 2813.45],
+    ["2024-08-08", 2810.45, 2825.67, 2802.34, 2829.12],
+    ["2024-08-09", 2827.34, 2839.78, 2820.45, 2845.23],
   ];
-  const areaEData = {
-    categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    values: [120, 132, 101, 134, 90, 230, 210]
-    };
-    const barEData={
-      categories: ['Apples', 'Bananas', 'Grapes', 'Oranges'],
-      values: [25, 40, 30, 35],
-      colors: ['#ff4d4d', '#ffb84d', '#4d79ff', '#4dff4d']
 
-    };
-    const pieEdata= [
-      { value: 1048, name: "Search Engines" },
-      { value: 735, name: "Direct" },
-      { value: 580, name: "Email" },
-      { value: 484, name: "Union Ads" },
-      { value: 300, name: "Video Ads" },
-    ];
+  const areaEData = {
+    categories: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    values: [
+      115, 125, 110, 140, 85, 220, 205, 125, 155, 95, 140, 80, 240, 215, 130,
+      135, 105, 145, 90, 225, 210, 130, 140, 100, 150, 85, 235, 220,
+    ],
+  };
+  const barEData = {
+    categories: [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Horror",
+      "Sci-Fi",
+      "Romance",
+      "Documentary",
+      "Animation",
+      "Fantasy",
+      "Thriller",
+      "Mystery",
+      "Adventure",
+      "Crime",
+      "Musical",
+      "Western",
+      "Biography",
+      "Family",
+      "War",
+      "History",
+      "Sport",
+      "Short",
+    ],
+    values: [
+      50, 70, 65, 30, 45, 40, 20, 55, 35, 60, 25, 50, 48, 15, 25, 33, 44, 22,
+      31, 29, 18,
+    ],
+    colors: [
+      "#ff5733",
+      "#33ff57",
+      "#3357ff",
+      "#ff33a8",
+      "#a833ff",
+      "#33fff1",
+      "#f1ff33",
+      "#ff8c33",
+      "#33d1ff",
+      "#8cff33",
+      "#ff3381",
+      "#33ffa8",
+      "#a8ff33",
+      "#ff3385",
+      "#33ff8c",
+      "#8c33ff",
+      "#ff3333",
+      "#3333ff",
+      "#ff3333",
+      "#33ffcc",
+      "#ffcc33",
+    ],
+  };
+  const pieEdata = [
+    { value: 1048, name: "Search Engines" },
+    { value: 735, name: "Direct" },
+    { value: 580, name: "Email" },
+    { value: 484, name: "Union Ads" },
+    { value: 300, name: "Video Ads" },
+    { value: 450, name: "Social Media" },
+    { value: 230, name: "Affiliate Marketing" },
+    { value: 600, name: "Content Marketing" },
+    { value: 340, name: "Referrals" },
+    { value: 720, name: "Organic Search" },
+    { value: 290, name: "Paid Search" },
+    { value: 410, name: "Display Ads" },
+    { value: 510, name: "Influencer Marketing" },
+    { value: 390, name: "Public Relations" },
+    { value: 470, name: "Partnerships" },
+    { value: 530, name: "Events" },
+    { value: 330, name: "Print Media" },
+    { value: 600, name: "Radio" },
+    { value: 270, name: "Television" },
+    { value: 410, name: "Podcasts" },
+    { value: 360, name: "Webinars" },
+  ];
+
   const [activeTab, setActiveTab] = React.useState("echarts"); // Default active tab
 
   const handleTabChange = (tab: string) => {
@@ -456,9 +587,24 @@ const Charts = () => {
     <>
       <h1>Charts Presentation for different libs.</h1>
       <div>
-        <button style={{backgroundColor:'transparent',borderColor:'#883333'}}onClick={() => handleTabChange("nivo")}>Nivo</button>
-        <button style={{backgroundColor:'transparent',borderColor:'#333388'}} onClick={() => handleTabChange("recharts")}>Recharts</button>
-        <button style={{backgroundColor:'transparent',borderColor:'#338833'}} onClick={() => handleTabChange("echarts")}>Echarts</button>
+        <button
+          style={{ backgroundColor: "transparent", borderColor: "#883333" }}
+          onClick={() => handleTabChange("nivo")}
+        >
+          Nivo
+        </button>
+        <button
+          style={{ backgroundColor: "transparent", borderColor: "#333388" }}
+          onClick={() => handleTabChange("recharts")}
+        >
+          Recharts
+        </button>
+        <button
+          style={{ backgroundColor: "transparent", borderColor: "#338833" }}
+          onClick={() => handleTabChange("echarts")}
+        >
+          Echarts
+        </button>
       </div>
       {activeTab === "nivo" && (
         <>
@@ -480,10 +626,10 @@ const Charts = () => {
       {activeTab === "echarts" && (
         <>
           <h2>Echarts Charts Examples</h2>
-          <BarEchartsCharts data={barEData}/>
-          <AreaEchartsCharts data={areaEData}/>
-          <PieEchartsCharts data={pieEdata}/>
-          <CandleEchartsCharts data={candleStickEData}/>
+          <BarEchartsCharts data={barEData} />
+          <AreaEchartsCharts data={areaEData} />
+          <PieEchartsCharts data={pieEdata} />
+          <CandleEchartsCharts data={candleStickEData} />
         </>
       )}
     </>

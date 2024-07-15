@@ -1,4 +1,27 @@
 import ReactECharts from "echarts-for-react";
+/*
+@component
+  Displays a pie chart using ECharts, featuring smooth animations and responsive design. 
+  The chart is interactive, allowing users to click on the legend to toggle data visibility. 
+  The chart's appearance is customizable, with a dark background and styled tooltips to enhance readability. 
+  Ideal for visualizing proportional data and traffic sources.
+
+@props
+  data: Array of objects representing the pie chart segments. Each object should have:
+    - value: Number indicating the segment's value
+    - name: String representing the segment's name
+
+@usage
+  <PieEchartsCharts 
+    data={[
+      { value: 335, name: 'Direct' },
+      { value: 310, name: 'Email' },
+      { value: 234, name: 'Affiliate' },
+      { value: 135, name: 'Video Ads' },
+      { value: 1548, name: 'Search Engine' }
+    ]} 
+  />
+*/
 
 const PieEchartsCharts = (props:{
   data:{
