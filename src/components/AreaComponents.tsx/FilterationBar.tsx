@@ -5,40 +5,30 @@ interface FilterationBarProps {
   onRangeChange: (range: string) => void;
 }
 
-const FilterationBar: React.FC<FilterationBarProps> = ({ currentRange, onRangeChange }) => {
+const FilterationBar: React.FC<FilterationBarProps> = ({
+  currentRange,
+  onRangeChange,
+}) => {
+  const buttonClass = (
+    filter: string
+  ) => `px-6 py-1 border border-blue-500 text-black rounded-full text-sm font-bold 
+ ${currentRange === filter ? "bg-blue-100" : "bg-white"}`;
   return (
     <div className="mb-5">
-      <button
-        onClick={() => onRangeChange("1D")}
-        className={`px-4 py-2 border border-blue-500 rounded text-black ${
-          currentRange === "1D" ? "bg-blue-100" : "bg-white"
-        }`}
-      >
+      <button className={buttonClass("1D")} onClick={() => onRangeChange("1D")}>
         1D
       </button>
-      <button
-        onClick={() => onRangeChange("5D")}
-        className={`px-4 py-2 border border-blue-500 rounded text-black ${
-          currentRange === "5D" ? "bg-blue-100" : "bg-white"
-        }`}
-      >
+      <button onClick={() => onRangeChange("5D")} className={buttonClass("5D")}>
         5D
       </button>
-      <button
-        onClick={() => onRangeChange("1W")}
-        className={`px-4 py-2 border border-blue-500 rounded text-black ${
-          currentRange === "1W" ? "bg-blue-100" : "bg-white"
-        }`}
-      >
-        1W
+      <button onClick={() => onRangeChange("3M")} className={buttonClass("3M")}>
+        3M
       </button>
-      <button
-        onClick={() => onRangeChange("1M")}
-        className={`px-4 py-2 border border-blue-500 rounded text-black ${
-          currentRange === "1M" ? "bg-blue-100" : "bg-white"
-        }`}
-      >
-        1M
+      <button onClick={() => onRangeChange("6M")} className={buttonClass("6M")}>
+        6M
+      </button>
+      <button onClick={() => onRangeChange("1Y")} className={buttonClass("1Y")}>
+        1Y
       </button>
     </div>
   );

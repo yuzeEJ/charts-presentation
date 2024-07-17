@@ -43,11 +43,11 @@ const AreaEchartsCharts = (props: { data: AreaApi }) => {
       case "5D":
         startDate = new Date(now.setDate(now.getDate() - 5));
         break;
-      case "1W":
-        startDate = new Date(now.setDate(now.getDate() - 7));
+      case "3M":
+        startDate = new Date(now.setDate(now.getMonth() - 3));
         break;
-      case "1M":
-        startDate = new Date(now.setMonth(now.getMonth() - 1));
+      case "6M":
+        startDate = new Date(now.setMonth(now.getMonth() - 6));
         break;
       default:
         startDate = new Date(now.setFullYear(now.getFullYear() - 1)); // Default to 1 year
@@ -73,16 +73,16 @@ const AreaEchartsCharts = (props: { data: AreaApi }) => {
       data: filteredData.map((el) => el.date.getHours()),
       axisLine: { show: false },
       axisLabel: { color: "#777" },
+      axisTick: { show: false },
     },
     yAxis: {
       type: "value",
-      axisLabel: { color: "#777" },
+      axisLabel: { color: "#777", onZero: false },
       axisLine: { show: false },
       position: "right",
       splitLine: {
         show: false, // Hide horizontal grid lines
       },
-
       min: function (value: { min: number }) {
         return value.min - 20;
       },
@@ -99,24 +99,24 @@ const AreaEchartsCharts = (props: { data: AreaApi }) => {
             x: 0,
             y: 0,
             x2: 0,
-            y2: 1,
+            y2: 0.7,
             colorStops: [
               {
                 offset: 0,
-                color: "rgba(0, 255, 0, 0.3)", // Green color at the top
+                color: "rgba(0, 255, 150, 0.8)", // Green color at the top
               },
               {
                 offset: 1,
-                color: "rgba(0, 255, 0, 0)", // Transparent at the bottom
+                color: "rgba(0, 255, 150, 0)", // Transparent at the bottom
               },
             ],
           },
         },
         lineStyle: {
-          color: "rgba(0, 255, 0, 1)", // Green color for the line
+          color: "rgba(0, 255, 150, 1)", // Green color for the line
         },
         itemStyle: {
-          color: "rgba(0, 255, 0, 1)", // Green color for the points
+          color: "rgba(0, 255, 250, 1)", // Green color for the points
         },
         symbol: "none",
       },
@@ -124,7 +124,7 @@ const AreaEchartsCharts = (props: { data: AreaApi }) => {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#fff" }}>
       <h1>Area chart</h1>
       <FilterationBar currentRange={timeRange} onRangeChange={setTimeRange} />
       <div style={{ height: "60vh", width: "100%", backgroundColor: "#fff" }}>
