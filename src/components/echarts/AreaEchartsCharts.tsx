@@ -49,6 +49,9 @@ const AreaEchartsCharts = (props: { data: AreaApi }) => {
       case "6M":
         startDate = new Date(now.setMonth(now.getMonth() - 6));
         break;
+      case "1Y":
+        startDate = new Date(now.setFullYear(now.getFullYear() - 1));
+        break;
       default:
         startDate = new Date(now.setFullYear(now.getFullYear() - 1)); // Default to 1 year
         break;
