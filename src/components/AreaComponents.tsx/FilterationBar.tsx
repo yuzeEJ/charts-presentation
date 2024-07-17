@@ -1,5 +1,6 @@
 import React from "react";
-
+import AreaIcon from "../../assets/AreaIcon.tsx";
+import CandleIcon from "../../assets/CandleIcon.tsx";
 interface FilterationBarProps {
   currentRange: string;
   onRangeChange: (range: string) => void;
@@ -14,7 +15,7 @@ const FilterationBar: React.FC<FilterationBarProps> = ({
   ) => `px-6 py-1 border border-blue-500 text-black rounded-full text-sm font-bold 
  ${currentRange === filter ? "bg-blue-100" : "bg-white"}`;
   return (
-    <div className="mb-5">
+    <div className="mb-5 ">
       <button className={buttonClass("1D")} onClick={() => onRangeChange("1D")}>
         1D
       </button>
@@ -29,6 +30,34 @@ const FilterationBar: React.FC<FilterationBarProps> = ({
       </button>
       <button onClick={() => onRangeChange("1Y")} className={buttonClass("1Y")}>
         1Y
+      </button>
+      <button
+        onClick={() => onRangeChange("Area")}
+        className={buttonClass("Area")}
+      >
+        <p
+          style={{
+            flexDirection: "row",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <AreaIcon /> Area
+        </p>
+      </button>
+      <button
+        onClick={() => onRangeChange("Candle")}
+        className={buttonClass("Candle")}
+      >
+        <p
+          style={{
+            flexDirection: "row",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <CandleIcon /> Candles
+        </p>
       </button>
     </div>
   );
