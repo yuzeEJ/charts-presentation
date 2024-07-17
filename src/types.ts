@@ -26,5 +26,24 @@ export type Stream = {
   René: number;
   Paul: number;
   Jacques: number;
-  
-}
+};
+
+export type AreaApiData = {
+  date: number;
+  openPrice: string;
+  closePrice: string;
+  lowPrice: string;
+  highPrice: string;
+};
+export type AreaApi = {
+  historicalPrices: AreaApiData[];
+};
+
+export type AreaData = {
+  date: Date;
+  openPrice: number;
+  closePrice: number;
+  lowPrice: number;
+  highPrice: number;
+  value: number;
+};

@@ -83,7 +83,9 @@ const CandleEchartsCharts = (props: {
 
   return (
     <div>
-      <h1 style={{ color: "#fff" }}>Candlestick Chart</h1>
+      <h1 style={{ color: "#fff" }}>
+        Candlestick Chart
+      </h1>
       <div style={{ height: "60vh" }}>
         <ReactECharts
           option={option}

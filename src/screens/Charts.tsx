@@ -37,6 +37,7 @@ import StreamNivoCharts from "../components/nivoCharts/StreamNivoCharts";
 import AreaRechartsCharts from "../components/rechartsCharts/AreaRechartsCharts";
 import BarRechartsCharts from "../components/rechartsCharts/BarRechartsCharts";
 import PieRechartsCharts from "../components/rechartsCharts/PieRecartsCharts";
+import { AreaApi } from "../types";
 const Charts = () => {
   const pieNivoData = [
     {
@@ -466,40 +467,176 @@ const Charts = () => {
     ["2024-08-09", 2827.34, 2839.78, 2820.45, 2845.23],
   ];
 
-  const areaEData = {
-    categories: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-    values: [
-      115, 125, 110, 140, 85, 220, 205, 125, 155, 95, 140, 80, 240, 215, 130,
-      135, 105, 145, 90, 225, 210, 130, 140, 100, 150, 85, 235, 220,
+  const areaEData: AreaApi = {
+    historicalPrices: [
+      {
+        date: 1720681200000,
+        openPrice: "11767.88",
+        closePrice: "11762.78",
+        lowPrice: "11744.75",
+        highPrice: "11778.95",
+      },
+      {
+        date: 1720684800000,
+        openPrice: "11762.78",
+        closePrice: "11754.34",
+        lowPrice: "11745.82",
+        highPrice: "11766.48",
+      },
+      {
+        date: 1720688400000,
+        openPrice: "11754.34",
+        closePrice: "11759.93",
+        lowPrice: "11747.44",
+        highPrice: "11770.85",
+      },
+      {
+        date: 1720692000000,
+        openPrice: "11759.91",
+        closePrice: "11761.97",
+        lowPrice: "11747.92",
+        highPrice: "11769.12",
+      },
+      {
+        date: 1720695600000,
+        openPrice: "11761.96",
+        closePrice: "11812.91",
+        lowPrice: "11761.15",
+        highPrice: "11814.01",
+      },
+      {
+        date: 1720699200000,
+        openPrice: "11792.41",
+        closePrice: "11792.41",
+        lowPrice: "11792.41",
+        highPrice: "11792.41",
+      },
+      {
+        date: 1720940400000,
+        openPrice: "11800.03",
+        closePrice: "11865.88",
+        lowPrice: "11796.93",
+        highPrice: "11872.79",
+      },
+      {
+        date: 1720944000000,
+        openPrice: "11866.31",
+        closePrice: "11878.85",
+        lowPrice: "11854.65",
+        highPrice: "11884.02",
+      },
+      {
+        date: 1720947600000,
+        openPrice: "11878.85",
+        closePrice: "11874.76",
+        lowPrice: "11868.21",
+        highPrice: "11891.35",
+      },
+      {
+        date: 1720951200000,
+        openPrice: "11874.75",
+        closePrice: "11872.41",
+        lowPrice: "11862.54",
+        highPrice: "11879.88",
+      },
+      {
+        date: 1720954800000,
+        openPrice: "11871.97",
+        closePrice: "11882.75",
+        lowPrice: "11863.7",
+        highPrice: "11883.55",
+      },
+      {
+        date: 1720958400000,
+        openPrice: "11881.55",
+        closePrice: "11881.55",
+        lowPrice: "11881.55",
+        highPrice: "11881.55",
+      },
+      {
+        date: 1721026800000,
+        openPrice: "11896.61",
+        closePrice: "11852.33",
+        lowPrice: "11831.66",
+        highPrice: "11905.74",
+      },
+      {
+        date: 1721030400000,
+        openPrice: "11852.34",
+        closePrice: "11870.36",
+        lowPrice: "11844.67",
+        highPrice: "11875.03",
+      },
+      {
+        date: 1721034000000,
+        openPrice: "11870.36",
+        closePrice: "11917.6",
+        lowPrice: "11865.64",
+        highPrice: "11925.65",
+      },
+      {
+        date: 1721037600000,
+        openPrice: "11917.61",
+        closePrice: "11910.43",
+        lowPrice: "11909.1",
+        highPrice: "11928.34",
+      },
+      {
+        date: 1721041200000,
+        openPrice: "11910.43",
+        closePrice: "11929.25",
+        lowPrice: "11904.75",
+        highPrice: "11930.31",
+      },
+      {
+        date: 1721044800000,
+        openPrice: "11947.7",
+        closePrice: "11947.7",
+        lowPrice: "11947.7",
+        highPrice: "11947.7",
+      },
+      {
+        date: 1721113200000,
+        openPrice: "11958.17",
+        closePrice: "11674.59",
+        lowPrice: "11647.51",
+        highPrice: "12009.8",
+      },
+      {
+        date: 1721116800000,
+        openPrice: "11994.18",
+        closePrice: "11672.88",
+        lowPrice: "11666.72",
+        highPrice: "12007.35",
+      },
+      {
+        date: 1721120400000,
+        openPrice: "12004.58",
+        closePrice: "12024.42",
+        lowPrice: "11994.13",
+        highPrice: "12034.3",
+      },
+      {
+        date: 1721124000000,
+        openPrice: "12024.38",
+        closePrice: "12037.11",
+        lowPrice: "12015.86",
+        highPrice: "12041.75",
+      },
+      {
+        date: 1721127600000,
+        openPrice: "12037.12",
+        closePrice: "12061.34",
+        lowPrice: "12030.64",
+        highPrice: "12070.9",
+      },
+      {
+        date: 1721131200000,
+        openPrice: "12080.37",
+        closePrice: "12080.37",
+        lowPrice: "12080.37",
+        highPrice: "12080.37",
+      },
     ],
   };
   const barEData = {
@@ -624,13 +761,13 @@ const Charts = () => {
         </>
       )}
       {activeTab === "echarts" && (
-        <>
+        <div style={{width:'100%'}}>
           <h2>Echarts Charts Examples</h2>
           <BarEchartsCharts data={barEData} />
           <AreaEchartsCharts data={areaEData} />
           <PieEchartsCharts data={pieEdata} />
           <CandleEchartsCharts data={candleStickEData} />
-        </>
+        </div>
       )}
     </>
   );
