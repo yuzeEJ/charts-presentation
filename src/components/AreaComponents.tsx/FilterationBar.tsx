@@ -19,7 +19,7 @@ const FilterationBar: React.FC<FilterationBarProps> = ({
      : "bg-slate-50"
  }`;
   return (
-    <div className="mb-5 space-x-2 justify-end flex mr-32">
+    <div className="mb-5 space-x-2 justify-end flex mr-10">
       <button className={buttonClass("1D")} onClick={() => onRangeChange("1D")}>
         1D
       </button>

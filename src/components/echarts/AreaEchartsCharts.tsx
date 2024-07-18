@@ -3,6 +3,7 @@ import ReactECharts from "echarts-for-react";
 import { AreaApi, AreaData } from "../../types";
 import { AreaUtils } from "../../utils/AreaUtils";
 import FilterationBar from "../AreaComponents.tsx/FilterationBar";
+import DataBar from "../AreaComponents.tsx/DataBar";
 
 /*
 @component
@@ -70,6 +71,11 @@ const AreaEchartsCharts = (props: { data: AreaApi }) => {
         crossStyle: { color: "#000" },
       },
     },
+    // remove white spaces (pad/mar)
+    grid: {
+      left: 100,
+      right: 100,
+    },
     xAxis: {
       type: "category",
       boundaryGap: false,
@@ -127,14 +133,25 @@ const AreaEchartsCharts = (props: { data: AreaApi }) => {
   };
 
   return (
-    <div style={{ backgroundColor: "#fff" }}>
+    <div className="h-max bg-white">
       <h1>Area chart</h1>
-      <FilterationBar currentRange={timeRange} onRangeChange={setTimeRange} />
-      <div style={{ height: "60vh", width: "100%", backgroundColor: "#fff" }}>
+      <div className="flex justify-between items-center">
+        <DataBar
+          data={{
+            volume: 90.5,
+            value: 89.0,
+            trades: 90.5,
+            up: 931.239,
+            down: 931.239,
+          }}
+        />
+        <FilterationBar currentRange={timeRange} onRangeChange={setTimeRange} />
+      </div>
+      <div className="h-[25rem] w-full flex self-center justify-between">
         <ReactECharts
           option={option}
-          style={{ height: "400px", width: "100%", display: "flex" }}
-          className="react-echarts"
+          className="react-echarts w-full"
+          style={{ height: "100%" }}
         />
       </div>
     </div>

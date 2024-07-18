@@ -47,3 +47,11 @@ export type AreaData = {
   highPrice: number;
   value: number;
 };
+
+export type DataBar = {
+  volume: number;
+  value: number;
+  trades: number;
+  up: number;
+  down: number;
+};
