@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ReactECharts from "echarts-for-react";
 import { AreaApi, AreaData } from "../../types";
 import { AreaUtils } from "../../utils/AreaUtils";

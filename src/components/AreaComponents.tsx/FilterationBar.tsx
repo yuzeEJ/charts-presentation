@@ -12,10 +12,14 @@ const FilterationBar: React.FC<FilterationBarProps> = ({
 }) => {
   const buttonClass = (
     filter: string
-  ) => `px-6 py-1 border border-blue-500 text-black rounded-full text-sm font-bold 
- ${currentRange === filter ? "bg-blue-100" : "bg-white"}`;
+  ) => `px-6 py-2  text-slate-500 rounded-full text-sm font-bold 
+ ${
+   currentRange === filter
+     ? "bg-blue-100 border border-blue-500"
+     : "bg-slate-50"
+ }`;
   return (
-    <div className="mb-5 ">
+    <div className="mb-5 space-x-2 justify-end flex mr-32">
       <button className={buttonClass("1D")} onClick={() => onRangeChange("1D")}>
         1D
       </button>
@@ -42,7 +46,7 @@ const FilterationBar: React.FC<FilterationBarProps> = ({
             alignItems: "center",
           }}
         >
-          <AreaIcon /> Area
+          <AreaIcon style={{ marginRight: 3 }} /> Area
         </p>
       </button>
       <button
@@ -56,7 +60,7 @@ const FilterationBar: React.FC<FilterationBarProps> = ({
             alignItems: "center",
           }}
         >
-          <CandleIcon /> Candles
+          <CandleIcon style={{ marginRight: 3 }} /> Candles
         </p>
       </button>
     </div>
